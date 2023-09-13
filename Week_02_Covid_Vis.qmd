@@ -17,8 +17,8 @@ I've include 4 different data sets. They all have the same data but have it repr
 ```{r first_plot}
 print(covid_data_count)
 ggplot(covid_data_count, aes(x = date, y = Cases, color = race)) + 
-  geom_point() +
-  geom_smooth()
+  facet_wrap(~ state, nrow = 5) +
+  geom_point() 
 ```
 
 If you want to only look at a specific state, you can do it like this. For now, see what you can do just using `ggplot`.
